@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@lottiefiles/react-lottie-player": "^3.4.1",
+    "@types/classnames": "^2.3.1",
+    "classnames": "^2.3.1"
   }
 }
