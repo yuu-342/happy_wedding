@@ -2,14 +2,19 @@
   font-family: 'Filxgirl';
   src: url('./assets/images/logo/Filxgirl.TTF')
 }
+:root {
+  --accentColor: #f09184;
+  --mainColor: #cab078;
+  --baseColor: #221f1f;
+}
 .Main {
   position: relative;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   opacity: 0;
-  background-color: #e0dcdc;
-  transition: opacity cubic-bezier(0, 0, 0.2, 1) .6s;
+  background-color: #fff;
+  transition: opacity cubic-bezier(0, 0, 0.2, 1) .7s;
 }
 .Main.Main--show {
   opacity: 1;
@@ -49,36 +54,46 @@
 }
 
 .Button {
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: calc(50% - 222px);
   display: block;
   font-family: 'Filxgirl';
   font-size: 92px;
-  color: #333;
+  color: var(--accentColor);
   border: 0;
-  padding: 20px;
+  border-radius: 8px;
+  padding: 24px 24px 24px 48px;
   margin: 0;
   cursor: pointer;
   background-color: transparent;
-  text-shadow: 0 0 8px #ed1844;
+  /* text-shadow: 0 0 8px #ed1844; */
   appearance: none;
   animation: 1.4s cubic-bezier(0, 0, 0.2, 1) buttonScale infinite;
+
 }
 
 .Button:hover,.Button:focus {
-  color: #ed1844;
+  color: #b46d64;
+  background-color: #fce9e6;
 }
-.Button:active {
-  color:#d0335f;
+.Button:active{
+  transform: scale(.8);
 }
 
-/* .WhtieCloud {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255,255,255,1);
-} */
+.CircleBackGround {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fce9e6;
+  animation: 1.4s cubic-bezier(0, 0, 0.2, 1) backGroundAnimation;
+  animation-fill-mode: forwards;
+
+}
 
 @keyframes isShow {
   0% {
@@ -107,5 +122,20 @@
   }
   90%{
     transform: scale(1.1,0.8);;
+  }
+}
+
+@keyframes backGroundAnimation {
+  0%{
+    width: 100px;
+    height: 100px;
+  }
+
+  100%{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
   }
 }

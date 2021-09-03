@@ -8,17 +8,23 @@ const App: React.FC = () => {
   const [isShow, setIsShow] = useState(false);
   const [isHeart, setIsHeart] = useState(false);
   const [isMain, setIsMain] = useState(true);
+  const [backGroundAnimation, setBackGroundAnimation] = useState(false);
   const onClick = () => {
-    setIsHeart(true);
+    setTimeout(() => {
+      setIsHeart(true);
+    }, 50);
+    setTimeout(() => {
+      setBackGroundAnimation(true);
+    }, 100);
     setTimeout(() => {
       setIsShow(!isShow);
-    }, 4000);
+    }, 4500);
 
     // 最後 全体の透過を下げる
     setTimeout(() => {
       setIsMain(!isMain);
       // このあとモザイクアートへ
-    }, 8000); // TODO:メッセージ量を見て採光したほうが良いかも
+    }, 9000); // TODO:メッセージ量を見て採光したほうが良いかも
   };
 
   const mainClass = ClassNames("Main", {
@@ -32,6 +38,8 @@ const App: React.FC = () => {
           Happy Wedding
         </button>
       )}
+
+      {backGroundAnimation && <div className="CircleBackGround" />}
 
       {isHeart && (
         <Player
@@ -55,7 +63,7 @@ const App: React.FC = () => {
               style={{
                 top: `calc(${Math.floor(Math.random() * 93)}%)`,
                 left: `${Math.floor(Math.random() * 60)}%`, // TODO: 計算を調整したほうがいいと思われ
-                animationDelay: `${index * 0.2}s`,
+                animationDelay: `${index * 0.4}s`,
               }}
             >
               <div className="Column__item">
