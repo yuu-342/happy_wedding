@@ -7,6 +7,9 @@
   --mainColor: #cab078;
   --baseColor: #221f1f;
 }
+::marker {
+  display: none;
+}
 .Main {
   position: relative;
   box-sizing: border-box;
@@ -35,8 +38,8 @@
 
 
 .Thumbnail {
-  width: 140px;
-  max-height: 140px;
+  width: 260px;
+  max-height: 260px;
   object-fit: cover;
   border-radius: 8px;
   overflow: hidden;
@@ -44,13 +47,27 @@
 
 .Column__item:last-child {
   flex-grow: 1;
-  margin-left: 8px;
+  margin-left: 16px;
 }
 
 .Comment {
   color: #444;
+  font-size: 26px;
+  line-height: 1.7;
+}
+
+.Comment--small {
   font-size: 18px;
-  line-height: 1.5;
+}
+
+.Comment--large {
+  font-size: 46px;
+}
+
+.MessageList {
+  width: 100%;
+  height: 100%;
+  background-color: #fce9e6;
 }
 
 .Button {
@@ -92,7 +109,47 @@
   background-color: #fce9e6;
   animation: 1.4s cubic-bezier(0, 0, 0.2, 1) backGroundAnimation;
   animation-fill-mode: forwards;
+}
 
+.ImageSlider {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ImageSlider__unit {
+  width: 33%;
+}
+.ImageSlider__unit:not(:first-child) {
+  margin-left: 24px;
+}
+
+.ImageSlider__list {
+  width: 100%;
+  height: 100%;
+  animation: topAnimationUp 10s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.ImageSlider__unit:nth-child(2) .ImageSlider__list {
+  animation: bottomAnimationDown 10s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.ImageSlider__unit:nth-child(3) .ImageSlider__list {
+  animation-duration: 12s;
+}
+
+.ImageSlider__item {
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 16px;
+}
+.ImageSlider__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 @keyframes isShow {
@@ -137,5 +194,23 @@
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+}
+
+@keyframes topAnimationUp {
+  0%{
+    transform:  translateY(0);
+  }
+  100%{
+    transform: translateY(-25%);
+  }
+}
+
+@keyframes bottomAnimationDown {
+  0%{
+    transform: translateY(-25%);
+  }
+  100%{
+    transform:  translateY(0);
   }
 }

@@ -1,47 +1,97 @@
 import React, { useState } from "react";
 import ClassNames from "classnames";
 import { Player } from "@lottiefiles/react-lottie-player";
-import { data } from "./sample/mock-responce.";
+import { imagesWithMessage } from "./sample/mock-responce";
+import { images } from "./sample/images";
 import "./App.css";
 
 const App: React.FC = () => {
-  const [isShow, setIsShow] = useState(false);
-  const [isHeart, setIsHeart] = useState(false);
-  const [isMain, setIsMain] = useState(true);
-  const [backGroundAnimation, setBackGroundAnimation] = useState(false);
+  // アニメーションをシーンごとに分割
+  const [section1, setSection1] = useState(true);
+  const [section2, setSection2] = useState(false);
+  const [section3, setSection3] = useState(false);
+  const [section4, setSection4] = useState(false);
+  const [section5, setSection5] = useState(true);
   const onClick = () => {
+    setSection1(false);
     setTimeout(() => {
-      setIsHeart(true);
+      setSection2(true);
     }, 50);
     setTimeout(() => {
-      setBackGroundAnimation(true);
-    }, 100);
+      setSection3(true);
+    }, 200);
     setTimeout(() => {
-      setIsShow(!isShow);
+      setSection2(false);
+      setSection3(false);
+      setSection4(!section4);
     }, 4500);
 
     // 最後 全体の透過を下げる
     setTimeout(() => {
-      setIsMain(!isMain);
+      // setSection5(!section5);
       // このあとモザイクアートへ
     }, 9000); // TODO:メッセージ量を見て採光したほうが良いかも
   };
 
   const mainClass = ClassNames("Main", {
-    "Main--show": isMain,
+    "Main--show": section5,
   });
 
   return (
     <div className={mainClass}>
-      {!isHeart && (
+      {section1 && (
+        <div className="ImageSlider">
+          <div className="ImageSlider__unit">
+            <ul className="ImageSlider__list">
+              {images.slice(0, 10).map((item, index) => (
+                <li key={index} className="ImageSlider__item">
+                  <img
+                    src={item.image}
+                    alt="Unit-1の画像"
+                    className="ImageSlider__image"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="ImageSlider__unit">
+            <ul className="ImageSlider__list">
+              {images.slice(10, 20).map((item, index) => (
+                <li key={index} className="ImageSlider__item">
+                  <img
+                    src={item.image}
+                    alt="Unit-2の画像"
+                    className="ImageSlider__image"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="ImageSlider__unit">
+            <ul className="ImageSlider__list">
+              {images.slice(10, 20).map((item, index) => (
+                <li key={index} className="ImageSlider__item">
+                  <img
+                    src={item.image}
+                    alt="Unit-3の画像"
+                    className="ImageSlider__image"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {section1 && (
         <button type="button" className="Button" onClick={onClick}>
           Happy Wedding
         </button>
       )}
 
-      {backGroundAnimation && <div className="CircleBackGround" />}
+      {section2 && <div className="CircleBackGround" />}
 
-      {isHeart && (
+      {section3 && (
         <Player
           src="https://assets3.lottiefiles.com/packages/lf20_5Vz7xX.json"
           background="transparent"
@@ -53,36 +103,48 @@ const App: React.FC = () => {
         />
       )}
 
-      {isShow && (
+      {section4 && (
         <div className="MessageList">
           {/* 繰り返し要素 */}
-          {data.map((item, index) => (
-            <div
-              className="Column"
-              key={index}
-              style={{
-                top: `calc(${Math.floor(Math.random() * 93)}%)`,
-                left: `${Math.floor(Math.random() * 60)}%`, // TODO: 計算を調整したほうがいいと思われ
-                animationDelay: `${index * 0.4}s`,
-              }}
-            >
-              <div className="Column__item">
-                <img
-                  src={item.image}
-                  width=""
-                  height=""
-                  alt="写真"
-                  className="Thumbnail"
-                />
-                {/* <img src={item.image} width="" height="" alt="写真" /> */}
-              </div>
-              {item.comment && item.comment !== "" && (
+          {imagesWithMessage.map((item, index) => {
+            const messageClass = ClassNames("Comment", {
+              "Comment--small": item.comment.length > 50,
+              "Comment--large": item.comment.length < 15,
+            });
+
+            return (
+              <div
+                className="Column"
+                key={index}
+                style={{
+                  top: `calc(${Math.floor(Math.random() * 93)}%)`,
+                  left: `${Math.floor(Math.random() * 68)}%`, // TODO: 計算を調整したほうがいいと思われ
+                  animationDelay: `${index * 0.6}s`,
+                }}
+              >
                 <div className="Column__item">
-                  <p className="Comment">{item.comment}</p>
+                  <img
+                    src={`https://d4e9fae3tu9x1.cloudfront.net${item.image}`}
+                    width=""
+                    height=""
+                    alt="写真"
+                    className="Thumbnail"
+                    decoding="async"
+                  />
                 </div>
-              )}
-            </div>
-          ))}
+                {item.comment && item.comment !== "" && (
+                  <div className="Column__item">
+                    <p
+                      className={messageClass}
+                      dangerouslySetInnerHTML={{
+                        __html: item.comment.replace(/\n/g, "<br>"),
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
           {/* 繰り返し要素 */}
         </div>
       )}
