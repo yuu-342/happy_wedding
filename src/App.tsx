@@ -39,10 +39,7 @@ const App: React.FC = () => {
   // UA取得
   const ut = navigator.userAgent;
 
-  console.log(ut);
-
   const UA = () => {
-    console.log("😺UA 走ったよー");
     if (
       ut.indexOf("iPhone") > 0 ||
       ut.indexOf("iPod") > 0 ||
