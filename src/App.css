@@ -92,13 +92,24 @@
 
 .MessageList.MessageList--smartphone .Column {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   border-radius: 0;
   border-width: 0 0 1px 0;
   border-color: #fce9e6;
 }
 
+.MessageList.MessageList--smartphone .Column__item:last-child {
+  display: flex;
+  align-items: center;
+}
+
 .MessageList.MessageList--smartphone br {
   display: none;
+}
+
+.MessageList.MessageList--smartphone .Comment {
+  word-wrap: break-word;
 }
 
 .Button {
