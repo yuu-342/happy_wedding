@@ -38,6 +38,9 @@ const App: React.FC = () => {
 
   // UA取得
   const ut = navigator.userAgent;
+  // 画面幅取得
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
 
   const UA = () => {
     if (
@@ -147,13 +150,21 @@ const App: React.FC = () => {
               "Comment--large": item.comment.length < 15,
             });
 
+            // 縦軸の計算
+            // 画面高さ/100*乱数 - 基本カードの高さ - カード内余白
+            let topPos =
+              (screenHeight / 100) * Math.floor(Math.random() * 90) -
+              (screenWidth > 1366 ? 220 : 80);
+
+            topPos = topPos > 60 ? topPos : Math.floor(Math.random() * 20); //画面上部に固まらないように、0以下判定分も乱数
+
             return (
               <div
                 className="Column"
                 key={index}
                 style={{
                   position: isSmp ? "static" : "absolute",
-                  top: `calc(${Math.floor(Math.random() * 86)}% - 120px)`, // カードのベース高さを引いてる
+                  top: `${topPos}px`, // カードのベース高さを引いてる
                   left: `${Math.floor(Math.random() * 68)}%`, // TODO: 計算を調整したほうがいいと思われ
                   animationDelay: `${index * 0.6}s`,
                 }}
