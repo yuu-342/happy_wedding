@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/happy_wedding/static/css/main.0d7b54f1.chunk.css",
-    "main.js": "/happy_wedding/static/js/main.4ad02764.chunk.js",
-    "main.js.map": "/happy_wedding/static/js/main.4ad02764.chunk.js.map",
-    "runtime-main.js": "/happy_wedding/static/js/runtime-main.cfa3599d.js",
-    "runtime-main.js.map": "/happy_wedding/static/js/runtime-main.cfa3599d.js.map",
-    "static/js/2.645cfb93.chunk.js": "/happy_wedding/static/js/2.645cfb93.chunk.js",
-    "static/js/2.645cfb93.chunk.js.map": "/happy_wedding/static/js/2.645cfb93.chunk.js.map",
-    "static/js/3.8123df45.chunk.js": "/happy_wedding/static/js/3.8123df45.chunk.js",
-    "static/js/3.8123df45.chunk.js.map": "/happy_wedding/static/js/3.8123df45.chunk.js.map",
-    "index.html": "/happy_wedding/index.html",
-    "static/css/main.0d7b54f1.chunk.css.map": "/happy_wedding/static/css/main.0d7b54f1.chunk.css.map",
-    "static/js/2.645cfb93.chunk.js.LICENSE.txt": "/happy_wedding/static/js/2.645cfb93.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/happy_wedding/static/media/Filxgirl.e5573a6e.TTF"
+    "main.css": "/happy_wedding/build/static/css/main.33654d81.chunk.css",
+    "main.js": "/happy_wedding/build/static/js/main.69fa858c.chunk.js",
+    "main.js.map": "/happy_wedding/build/static/js/main.69fa858c.chunk.js.map",
+    "runtime-main.js": "/happy_wedding/build/static/js/runtime-main.a326ce24.js",
+    "runtime-main.js.map": "/happy_wedding/build/static/js/runtime-main.a326ce24.js.map",
+    "static/js/2.c5fe8fe7.chunk.js": "/happy_wedding/build/static/js/2.c5fe8fe7.chunk.js",
+    "static/js/2.c5fe8fe7.chunk.js.map": "/happy_wedding/build/static/js/2.c5fe8fe7.chunk.js.map",
+    "static/js/3.8123df45.chunk.js": "/happy_wedding/build/static/js/3.8123df45.chunk.js",
+    "static/js/3.8123df45.chunk.js.map": "/happy_wedding/build/static/js/3.8123df45.chunk.js.map",
+    "index.html": "/happy_wedding/build/index.html",
+    "static/css/main.33654d81.chunk.css.map": "/happy_wedding/build/static/css/main.33654d81.chunk.css.map",
+    "static/js/2.c5fe8fe7.chunk.js.LICENSE.txt": "/happy_wedding/build/static/js/2.c5fe8fe7.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/happy_wedding/build/static/media/Filxgirl.e5573a6e.TTF"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfa3599d.js",
-    "static/js/2.645cfb93.chunk.js",
-    "static/css/main.0d7b54f1.chunk.css",
-    "static/js/main.4ad02764.chunk.js"
+    "static/js/runtime-main.a326ce24.js",
+    "static/js/2.c5fe8fe7.chunk.js",
+    "static/css/main.33654d81.chunk.css",
+    "static/js/main.69fa858c.chunk.js"
   ]
 }
