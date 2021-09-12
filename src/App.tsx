@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ClassNames from "classnames";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { imagesWithMessage } from "./sample/mock-responce";
 import { images } from "./sample/images";
+import Background from "./background";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -12,6 +13,8 @@ const App: React.FC = () => {
   const [section3, setSection3] = useState(false);
   const [section4, setSection4] = useState(false);
   const [section5, setSection5] = useState(true);
+  // UA
+  const [isSmp, setIsSmp] = useState(false);
   const onClick = () => {
     setSection1(false);
     setTimeout(() => {
@@ -33,53 +36,88 @@ const App: React.FC = () => {
     }, 9000); // TODO:メッセージ量を見て採光したほうが良いかも
   };
 
+  // UA取得
+  const ut = navigator.userAgent;
+
+  console.log(ut);
+
+  const UA = () => {
+    console.log("😺UA 走ったよー");
+    if (
+      ut.indexOf("iPhone") > 0 ||
+      ut.indexOf("iPod") > 0 ||
+      (ut.indexOf("Android") > 0 && ut.indexOf("Mobile") > 0)
+    ) {
+      setIsSmp(true);
+    } else if (ut.indexOf("iPad") > 0 || ut.indexOf("Android") > 0) {
+      // tabletもSP判定にする
+      setIsSmp(true);
+    } else {
+      setIsSmp(false);
+    }
+  };
+
+  useEffect(() => {
+    UA();
+
+    window.addEventListener("resize", UA);
+    return () => window.removeEventListener("resize", UA);
+  }, [isSmp]);
+
   const mainClass = ClassNames("Main", {
     "Main--show": section5,
+  });
+
+  const messageListClass = ClassNames("MessageList", {
+    "MessageList--smartphone": isSmp,
   });
 
   return (
     <div className={mainClass}>
       {section1 && (
-        <div className="ImageSlider">
-          <div className="ImageSlider__unit">
-            <ul className="ImageSlider__list">
-              {images.slice(0, 10).map((item, index) => (
-                <li key={index} className="ImageSlider__item">
-                  <img
-                    src={item.image}
-                    alt="Unit-1の画像"
-                    className="ImageSlider__image"
-                  />
-                </li>
-              ))}
-            </ul>
+        <div className="Section1">
+          <div className="ImageSlider">
+            <div className="ImageSlider__unit">
+              <ul className="ImageSlider__list">
+                {images.slice(0, 10).map((item, index) => (
+                  <li key={index} className="ImageSlider__item">
+                    <img
+                      src={item.image}
+                      alt="Unit-1の画像"
+                      className="ImageSlider__image"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="ImageSlider__unit">
+              <ul className="ImageSlider__list">
+                {images.slice(10, 20).map((item, index) => (
+                  <li key={index} className="ImageSlider__item">
+                    <img
+                      src={item.image}
+                      alt="Unit-2の画像"
+                      className="ImageSlider__image"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="ImageSlider__unit">
+              <ul className="ImageSlider__list">
+                {images.slice(10, 20).map((item, index) => (
+                  <li key={index} className="ImageSlider__item">
+                    <img
+                      src={item.image}
+                      alt="Unit-3の画像"
+                      className="ImageSlider__image"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="ImageSlider__unit">
-            <ul className="ImageSlider__list">
-              {images.slice(10, 20).map((item, index) => (
-                <li key={index} className="ImageSlider__item">
-                  <img
-                    src={item.image}
-                    alt="Unit-2の画像"
-                    className="ImageSlider__image"
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="ImageSlider__unit">
-            <ul className="ImageSlider__list">
-              {images.slice(10, 20).map((item, index) => (
-                <li key={index} className="ImageSlider__item">
-                  <img
-                    src={item.image}
-                    alt="Unit-3の画像"
-                    className="ImageSlider__image"
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Background />
         </div>
       )}
 
@@ -104,7 +142,7 @@ const App: React.FC = () => {
       )}
 
       {section4 && (
-        <div className="MessageList">
+        <div className={messageListClass}>
           {/* 繰り返し要素 */}
           {imagesWithMessage.map((item, index) => {
             const messageClass = ClassNames("Comment", {
@@ -117,7 +155,8 @@ const App: React.FC = () => {
                 className="Column"
                 key={index}
                 style={{
-                  top: `calc(${Math.floor(Math.random() * 93)}%)`,
+                  position: isSmp ? "static" : "absolute",
+                  top: `calc(${Math.floor(Math.random() * 86)}% - 120px)`, // カードのベース高さを引いてる
                   left: `${Math.floor(Math.random() * 68)}%`, // TODO: 計算を調整したほうがいいと思われ
                   animationDelay: `${index * 0.6}s`,
                 }}

@@ -16,7 +16,6 @@
   width: 100vw;
   height: 100vh;
   opacity: 0;
-  background-color: #fff;
   transition: opacity cubic-bezier(0, 0, 0.2, 1) .7s;
 }
 .Main.Main--show {
@@ -35,11 +34,9 @@
   animation-fill-mode: forwards;
 }
 
-
-
 .Thumbnail {
-  width: 260px;
-  max-height: 260px;
+  width: 140px;
+  max-height: 140px;
   object-fit: cover;
   border-radius: 8px;
   overflow: hidden;
@@ -52,22 +49,56 @@
 
 .Comment {
   color: #444;
-  font-size: 26px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
 .Comment--small {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .Comment--large {
-  font-size: 46px;
+  font-size: 18px;
+}
+
+/* PCのみ */
+@media screen and (min-width: 1366px) {
+  .Thumbnail {
+    width: 260px;
+    max-height: 260px;
+  }
+
+  .Comment {
+    font-size: 26px;
+  }
+  .Comment--small {
+    font-size: 18px;
+  }
+  .Comment--large {
+    font-size: 46px;
+  }
 }
 
 .MessageList {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background-color: #fce9e6;
+}
+
+.MessageList.MessageList--smartphone {
+  height: auto;
+}
+
+.MessageList.MessageList--smartphone .Column {
+  width: 100%;
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  border-color: #fce9e6;
+}
+
+.MessageList.MessageList--smartphone br {
+  display: none;
 }
 
 .Button {
@@ -101,8 +132,8 @@
 
 .CircleBackGround {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: calc(50% - (100px / 2));
+  left: calc(50% - (100px / 2));
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -113,21 +144,28 @@
 
 .ImageSlider {
   display: flex;
+  box-sizing: border-box;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  padding: 0 2vw;
 }
 
 .ImageSlider__unit {
-  width: 33%;
+  width: 50%;
 }
 .ImageSlider__unit:not(:first-child) {
-  margin-left: 24px;
+  margin-left: 12px;
+}
+
+.ImageSlider__unit:nth-child(3) {
+  display: none;
 }
 
 .ImageSlider__list {
   width: 100%;
   height: 100%;
+  padding: 0;
   animation: topAnimationUp 10s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
@@ -143,13 +181,52 @@
   overflow: hidden;
   box-sizing: border-box;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .ImageSlider__image {
   width: 100%;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+}
+
+/* PCのみ */
+@media screen and (min-width: 1366px) {
+  .ImageSlider__unit {
+    width: 33%;
+  }
+  .ImageSlider__unit:not(:first-child) {
+    margin-left: 24px;
+  }
+  .ImageSlider__unit:nth-child(3) {
+    display: block;
+  }
+  .ImageSlider__item {
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+
+
+.Section1 {
+  position: relative;
+}
+
+.Background {
+  z-index: -1;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.Background svg {
+  height: 100%;
 }
 
 @keyframes isShow {
