@@ -1,3 +1,7 @@
+# 確認用 URL
+
+https://yuu-342.github.io/happy_wedding/build/
+
 # 環境構築
 
 1. node のインストール
