@@ -80,7 +80,7 @@ const App: React.FC = () => {
             <div className="ImageSlider__unit">
               <ul className="ImageSlider__list">
                 {images.slice(0, 70).map((images, index) => (
-                  <li key={index} className="ImageSlider__item">
+                  <li key={`Unit-1-${index}`} className="ImageSlider__item">
                     <img
                       src={images.item}
                       alt="Unit-1の画像"
@@ -94,7 +94,7 @@ const App: React.FC = () => {
             <div className="ImageSlider__unit">
               <ul className="ImageSlider__list">
                 {images.slice(71, 140).map((images, index) => (
-                  <li key={index} className="ImageSlider__item">
+                  <li key={`Unit-2-${index}`} className="ImageSlider__item">
                     <img
                       src={images.item}
                       alt="Unit-2の画像"
@@ -108,7 +108,7 @@ const App: React.FC = () => {
             <div className="ImageSlider__unit">
               <ul className="ImageSlider__list">
                 {images.slice(141, 210).map((images, index) => (
-                  <li key={index} className="ImageSlider__item">
+                  <li key={`Unit-3-${index}`} className="ImageSlider__item">
                     <img
                       src={images.item}
                       alt="Unit-3の画像"
