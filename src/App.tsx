@@ -85,7 +85,7 @@ const App: React.FC = () => {
     <div className={mainClass}>
       {section1 && (
         <div className="Section1">
-          <ImageSlider>
+          <ImageSlider isSmp>
             <ImageSliderItem images={images.slice(0, isSmp ? 30 : 70)} />
             <ImageSliderItem
               images={images.slice((isSmp ? 30 : 70) + 1, isSmp ? 60 : 140)}
@@ -99,7 +99,11 @@ const App: React.FC = () => {
       )}
 
       {section1 && (
-        <button type="button" className="Button" onClick={onClick}>
+        <button
+          type="button"
+          className={`Button${isSmp ? " Button--smartphone" : ""}`}
+          onClick={onClick}
+        >
           Happy Wedding
         </button>
       )}

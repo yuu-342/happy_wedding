@@ -118,6 +118,7 @@
   top: 50%;
   left: calc(50% - 222px);
   display: block;
+  box-sizing: border-box;
   font-family: 'Filxgirl';
   font-size: 92px;
   color: var(--accentColor);
@@ -127,10 +128,13 @@
   margin: 0;
   cursor: pointer;
   background-color: transparent;
-  /* text-shadow: 0 0 8px #ed1844; */
   appearance: none;
   animation: 1.4s cubic-bezier(0, 0, 0.2, 1) buttonScale infinite;
-
+}
+.Button.Button--smartphone {
+  left: calc(50% - 188px);
+  font-size: 78px;
+  padding: 24px 0 24px 12px;
 }
 
 .Button:hover,.Button:focus {
@@ -209,16 +213,16 @@
 @keyframes buttonScale {
   0%,100% {
     transform: translateY(0);
-    transform: scale(1);
+    transform: scale(.9);
   }
   30%{
     transform: translateY(-40px);
   }
   50%{
-    transform: scale(1)
+    transform: scale(.9)
   }
   90%{
-    transform: scale(1.1,0.8);;
+    transform: scale(1,0.7);;
   }
 }
 

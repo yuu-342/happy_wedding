@@ -22,11 +22,18 @@
   width: 100%;
   height: auto;
   padding: 0;
-  animation: topAnimationUp 90s ease infinite;
+  animation: topAnimationUp 96s ease infinite;
+}
+.ImageSlider.ImageSlider--smartphone .ImageSlider__list {
+  animation-duration: 45s;
+}
+
+.ImageSlider.ImageSlider--smartphone .ImageSlider__unit:nth-child(2) .ImageSlider__list {
+  animation-duration: 52s;
 }
 
 .ImageSlider__unit:nth-child(2) .ImageSlider__list {
-  animation: bottomAnimationDown 96s ease infinite;
+  animation: bottomAnimationDown 102s ease infinite;
 }
 .ImageSlider__unit:nth-child(3) .ImageSlider__list {
   animation-duration: 110s;

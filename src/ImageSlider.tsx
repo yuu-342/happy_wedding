@@ -1,8 +1,16 @@
 import React from "react";
 import "./ImageSlider.css";
 
-const ImageSlider: React.FC = (props) => (
-  <div className="ImageSlider">{props.children}</div>
+interface ImageSliderProps {
+  isSmp?: boolean;
+}
+
+const ImageSlider: React.FC<ImageSliderProps> = (props) => (
+  <div
+    className={`ImageSlider${props.isSmp ? " ImageSlider--smartphone" : ""}`}
+  >
+    {props.children}
+  </div>
 );
 
 export default ImageSlider;
