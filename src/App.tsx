@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ClassNames from "classnames";
 import { Player } from "@lottiefiles/react-lottie-player";
+
+import ImageSlider from "./ImageSlider";
+import ImageSliderItem from "./ImageSliderItem";
+
 import { imagesWithMessage } from "./sample/mock-responce";
 import { images } from "./sample/images";
 import Background from "./background";
@@ -15,6 +19,11 @@ const App: React.FC = () => {
   const [section5, setSection5] = useState(true);
   // UA
   const [isSmp, setIsSmp] = useState(false);
+
+  // 写真の枚数
+  let UNIT_3_IMAGES = 210;
+
+  // animation trigger
   const onClick = () => {
     setSection1(false);
     setTimeout(() => {
@@ -76,50 +85,15 @@ const App: React.FC = () => {
     <div className={mainClass}>
       {section1 && (
         <div className="Section1">
-          <div className="ImageSlider">
-            <div className="ImageSlider__unit">
-              <ul className="ImageSlider__list">
-                {images.slice(0, 70).map((images, index) => (
-                  <li key={`Unit-1-${index}`} className="ImageSlider__item">
-                    <img
-                      src={images.item}
-                      alt="Unit-1の画像"
-                      className="ImageSlider__image"
-                      decoding="async"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ImageSlider__unit">
-              <ul className="ImageSlider__list">
-                {images.slice(71, 140).map((images, index) => (
-                  <li key={`Unit-2-${index}`} className="ImageSlider__item">
-                    <img
-                      src={images.item}
-                      alt="Unit-2の画像"
-                      className="ImageSlider__image"
-                      decoding="async"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ImageSlider__unit">
-              <ul className="ImageSlider__list">
-                {images.slice(141, 210).map((images, index) => (
-                  <li key={`Unit-3-${index}`} className="ImageSlider__item">
-                    <img
-                      src={images.item}
-                      alt="Unit-3の画像"
-                      className="ImageSlider__image"
-                      decoding="async"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <ImageSlider>
+            <ImageSliderItem images={images.slice(0, isSmp ? 30 : 70)} />
+            <ImageSliderItem
+              images={images.slice((isSmp ? 30 : 70) + 1, isSmp ? 60 : 140)}
+            />
+            {!isSmp && (
+              <ImageSliderItem images={images.slice(141, UNIT_3_IMAGES)} />
+            )}
+          </ImageSlider>
           <Background />
         </div>
       )}
