@@ -175,16 +175,16 @@
 
 .ImageSlider__list {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
-  animation: topAnimationUp 10s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: topAnimationUp 70s ease infinite;
 }
 
 .ImageSlider__unit:nth-child(2) .ImageSlider__list {
-  animation: bottomAnimationDown 10s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: bottomAnimationDown 84s ease infinite;
 }
 .ImageSlider__unit:nth-child(3) .ImageSlider__list {
-  animation-duration: 12s;
+  animation-duration: 100s;
 }
 
 .ImageSlider__item {

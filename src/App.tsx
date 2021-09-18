@@ -79,12 +79,13 @@ const App: React.FC = () => {
           <div className="ImageSlider">
             <div className="ImageSlider__unit">
               <ul className="ImageSlider__list">
-                {images.slice(0, 10).map((item, index) => (
+                {images.slice(0, 70).map((images, index) => (
                   <li key={index} className="ImageSlider__item">
                     <img
-                      src={item.image}
+                      src={images.item}
                       alt="Unit-1の画像"
                       className="ImageSlider__image"
+                      decoding="async"
                     />
                   </li>
                 ))}
@@ -92,12 +93,13 @@ const App: React.FC = () => {
             </div>
             <div className="ImageSlider__unit">
               <ul className="ImageSlider__list">
-                {images.slice(10, 20).map((item, index) => (
+                {images.slice(71, 140).map((images, index) => (
                   <li key={index} className="ImageSlider__item">
                     <img
-                      src={item.image}
+                      src={images.item}
                       alt="Unit-2の画像"
                       className="ImageSlider__image"
+                      decoding="async"
                     />
                   </li>
                 ))}
@@ -105,12 +107,13 @@ const App: React.FC = () => {
             </div>
             <div className="ImageSlider__unit">
               <ul className="ImageSlider__list">
-                {images.slice(10, 20).map((item, index) => (
+                {images.slice(141, 210).map((images, index) => (
                   <li key={index} className="ImageSlider__item">
                     <img
-                      src={item.image}
+                      src={images.item}
                       alt="Unit-3の画像"
                       className="ImageSlider__image"
+                      decoding="async"
                     />
                   </li>
                 ))}
