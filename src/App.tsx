@@ -8,6 +8,7 @@ import ImageSliderItem from "./ImageSliderItem";
 import { imagesWithMessage } from "./sample/mock-responce";
 import { images } from "./sample/images";
 import Background from "./background";
+import MosaicArt from "./assets//images/images/result5.jpeg";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -16,7 +17,7 @@ const App: React.FC = () => {
   const [section2, setSection2] = useState(false);
   const [section3, setSection3] = useState(false);
   const [section4, setSection4] = useState(false);
-  const [section5, setSection5] = useState(true);
+  const [section5, setSection5] = useState(false);
   // UA
   const [isSmp, setIsSmp] = useState(false);
 
@@ -40,9 +41,9 @@ const App: React.FC = () => {
 
     // 最後 全体の透過を下げる
     setTimeout(() => {
-      // setSection5(!section5);
+      setSection5(true);
       // このあとモザイクアートへ
-    }, 9000); // TODO:メッセージ量を見て採光したほうが良いかも
+    }, 22000); // TODO:メッセージ量を見て採光したほうが良いかも
   };
 
   // UA取得
@@ -73,16 +74,17 @@ const App: React.FC = () => {
     return () => window.removeEventListener("resize", UA);
   }, [isSmp]);
 
-  const mainClass = ClassNames("Main", {
-    "Main--show": section5,
-  });
-
   const messageListClass = ClassNames("MessageList", {
     "MessageList--smartphone": isSmp,
+    "MessageList--hide": section5,
+  });
+
+  const sectionLast = ClassNames("Section5", {
+    "Section5--show": section5,
   });
 
   return (
-    <div className={mainClass}>
+    <div className="Main">
       {section1 && (
         <div className="Section1">
           <ImageSlider isSmp>
@@ -176,6 +178,19 @@ const App: React.FC = () => {
           {/* 繰り返し要素 */}
         </div>
       )}
+      {/* {section5 && ( */}
+      <div className={sectionLast}>
+        <div className="Section5__cloud" />
+        <img
+          src={MosaicArt}
+          alt="モザイクアート画像"
+          width="2560"
+          height="1920"
+          decoding="async"
+          className="Section5__image"
+        />
+      </div>
+      {/* )} */}
     </div>
   );
 };

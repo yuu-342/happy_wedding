@@ -22,7 +22,7 @@
   width: 100%;
   height: auto;
   padding: 0;
-  animation: topAnimationUp 96s ease infinite;
+  animation: topAnimationUp 98s ease infinite;
 }
 .ImageSlider.ImageSlider--smartphone .ImageSlider__list {
   animation-duration: 45s;
