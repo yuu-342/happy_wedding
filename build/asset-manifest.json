@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/happy_wedding/build/static/css/main.4dc1e3d2.chunk.css",
-    "main.js": "/happy_wedding/build/static/js/main.070b08f7.chunk.js",
-    "main.js.map": "/happy_wedding/build/static/js/main.070b08f7.chunk.js.map",
+    "main.css": "/happy_wedding/build/static/css/main.1d7b4abb.chunk.css",
+    "main.js": "/happy_wedding/build/static/js/main.cffd9e57.chunk.js",
+    "main.js.map": "/happy_wedding/build/static/js/main.cffd9e57.chunk.js.map",
     "runtime-main.js": "/happy_wedding/build/static/js/runtime-main.7ec7d8c2.js",
     "runtime-main.js.map": "/happy_wedding/build/static/js/runtime-main.7ec7d8c2.js.map",
     "static/js/2.320ec00c.chunk.js": "/happy_wedding/build/static/js/2.320ec00c.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.225c8cc7.chunk.js": "/happy_wedding/build/static/js/3.225c8cc7.chunk.js",
     "static/js/3.225c8cc7.chunk.js.map": "/happy_wedding/build/static/js/3.225c8cc7.chunk.js.map",
     "index.html": "/happy_wedding/build/index.html",
-    "static/css/main.4dc1e3d2.chunk.css.map": "/happy_wedding/build/static/css/main.4dc1e3d2.chunk.css.map",
+    "static/css/main.1d7b4abb.chunk.css.map": "/happy_wedding/build/static/css/main.1d7b4abb.chunk.css.map",
     "static/js/2.320ec00c.chunk.js.LICENSE.txt": "/happy_wedding/build/static/js/2.320ec00c.chunk.js.LICENSE.txt",
     "static/media/App.css": "/happy_wedding/build/static/media/Filxgirl.e5573a6e.TTF"
   },
   "entrypoints": [
     "static/js/runtime-main.7ec7d8c2.js",
     "static/js/2.320ec00c.chunk.js",
-    "static/css/main.4dc1e3d2.chunk.css",
-    "static/js/main.070b08f7.chunk.js"
+    "static/css/main.1d7b4abb.chunk.css",
+    "static/js/main.cffd9e57.chunk.js"
   ]
 }
