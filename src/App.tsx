@@ -182,7 +182,7 @@ const App: React.FC = () => {
       <div className={sectionLast}>
         <div className="Section5__cloud" />
         <img
-          src={MosaicArt}
+          src="https://d4e9fae3tu9x1.cloudfront.net/mozaiku_art/result6.png"
           alt="モザイクアート画像"
           width="2560"
           height="1920"
