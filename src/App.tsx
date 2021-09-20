@@ -8,7 +8,6 @@ import ImageSliderItem from "./ImageSliderItem";
 import { imagesWithMessage } from "./sample/mock-responce";
 import { images } from "./sample/images";
 import Background from "./background";
-import MosaicArt from "./assets//images/images/result5.jpeg";
 import "./App.css";
 
 const App: React.FC = () => {
