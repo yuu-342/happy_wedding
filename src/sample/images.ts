@@ -333,9 +333,6 @@ export const images = [
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/292.jpeg",
   },
   {
-    item: "https://d4e9fae3tu9x1.cloudfront.net/images/293.jpeg",
-  },
-  {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/294.jpeg",
   },
   {
@@ -430,9 +427,6 @@ export const images = [
   },
   {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/327.jpg",
-  },
-  {
-    item: "https://d4e9fae3tu9x1.cloudfront.net/images/328.jpeg",
   },
   {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/329.jpeg",
@@ -657,9 +651,6 @@ export const images = [
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/414.JPG",
   },
   {
-    item: "https://d4e9fae3tu9x1.cloudfront.net/images/415.jpeg",
-  },
-  {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/416.jpeg",
   },
   {
@@ -673,9 +664,6 @@ export const images = [
   },
   {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/424.JPG",
-  },
-  {
-    item: "https://d4e9fae3tu9x1.cloudfront.net/images/426.jpeg",
   },
   {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/427.jpeg",
@@ -898,9 +886,6 @@ export const images = [
   },
   {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/503.JPG",
-  },
-  {
-    item: "https://d4e9fae3tu9x1.cloudfront.net/images/504.jpeg",
   },
   {
     item: "https://d4e9fae3tu9x1.cloudfront.net/images/505.jpeg",
