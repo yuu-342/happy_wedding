@@ -2,6 +2,14 @@
   font-family: 'Filxgirl';
   src: url('./assets/images/logo/Filxgirl.TTF')
 }
+@font-face {
+  font-family: 'uzura';
+  src: url('./assets/images/logo/uzura.ttf')
+}
+@font-face {
+  font-family: 'yuzupop';
+  src: url('./assets/images/logo/yuzupop_Bold.ttf')
+}
 :root {
   --accentColor: #f09184;
   --mainColor: #cab078;
@@ -15,6 +23,7 @@
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 
@@ -54,7 +63,7 @@
 }
 
 .Comment--large {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* PCのみ */
@@ -71,7 +80,7 @@
     font-size: 18px;
   }
   .Comment--large {
-    font-size: 46px;
+    font-size: 38px;
   }
 }
 
@@ -188,53 +197,68 @@
 }
 
 .Section5 {
-  /* display: none; */
   width: 100vw;
   height: 100vh;
   max-height: 0;
   opacity: 0;
   visibility: hidden;
+  background-image: url('https://d4e9fae3tu9x1.cloudfront.net/mozaiku_art/result6.png');
+  background-position: center;
+  background-size: cover;
+  transition: opacity 4s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .Section5--show {
-  /* display: block; */
   max-height: none;
   opacity: 1;
   visibility: visible;
 }
 
-.Section5__cloud {
-  z-index: 1;
+.Section5__message {
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transform: scale(1);
-  background-color: rgba(255,255,255,.95);
-  /* background-color: red; */
-  transition-property: opacity, transform, border-radius;
-  transition-duration: 6.5s;
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  right: 0;
+  text-align: center;
+  color: #222;
+  margin: 0;
 }
-.Section5--show .Section5__cloud {
-  opacity: 0;
-  border-radius: 50%;
-  transform: scale(.05);
+.Section5__message > span {
+  padding: 16px 28px;
+  border-radius: 16px;
+  background-color: rgba(255,255,255,.3);
 }
+.Section5__messageName {
+  top: 10%;
+  font-size: 58px;
+  font-family: 'uzura';
+}
+.Section5__messageNameSmall {
+  font-size: 46px;
+  letter-spacing: -5px;
 
-.Section5__image {
-  aspect-ratio: 4/3;
-  width: 100%;
-  height: 0;
-  opacity: 0;
-  transition: opacity 3s cubic-bezier(0, 0, 0.2, 1);
 }
-
-.Section5--show .Section5__image {
-  opacity: 1;
-  height: auto;
+.Section5__messageKekkon {
+  letter-spacing: 8px;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--accentColor) 8%,#FA8B21 38%,#FA4E37 50%,#D2FA50 68%,#1E77FA 86%);
+  background-clip: text;
+}
+.Section5__messageKekkonSmall {
+  font-size: 82px;
+}
+.Section5__messageText1 {
+  bottom: 40%;
+  font-size: 94px;
+  font-family: 'yuzupop';
+}
+.Section5__messageText2 {
+  bottom: 15%;
+  font-size: 70px;
+  font-family: 'yuzupop';
+  letter-spacing: -4px;
+}
+.Section5__messageExclamation {
+  letter-spacing: -18px;
 }
 
 .Background {

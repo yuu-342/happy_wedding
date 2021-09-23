@@ -177,19 +177,25 @@ const App: React.FC = () => {
           {/* 繰り返し要素 */}
         </div>
       )}
-      {/* {section5 && ( */}
       <div className={sectionLast}>
-        <div className="Section5__cloud" />
-        <img
-          src="https://d4e9fae3tu9x1.cloudfront.net/mozaiku_art/result6.png"
-          alt="モザイクアート画像"
-          width="2560"
-          height="1920"
-          decoding="async"
-          className="Section5__image"
-        />
+        <p className="Section5__message Section5__messageName">
+          <span>
+            悠一<span className="Section5__messageNameSmall">さん</span> 晴菜
+            <span className="Section5__messageNameSmall">さん</span>
+          </span>
+        </p>
+        <p className="Section5__message Section5__messageText1">
+          <span className="Section5__messageKekkon">
+            <span className="Section5__messageKekkonSmall">ご</span>結婚
+          </span>
+        </p>
+        <p className="Section5__message Section5__messageText2">
+          <span>
+            おめでとうございます
+            <span className="Section5__messageExclamation">！!</span>
+          </span>
+        </p>
       </div>
-      {/* )} */}
     </div>
   );
 };
