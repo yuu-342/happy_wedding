@@ -41,3 +41,12 @@ $ yarn
 ```
 $ yarn start
 ```
+
+6. gh-page への反映方法
+
+下記コマンド実行後に master ブランチに push すると反映されます。
+少し時間がかかることもあります
+
+```
+$ yarn deploy
+```
