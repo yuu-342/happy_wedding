@@ -25,6 +25,9 @@
   height: 100vh;
   overflow: hidden;
 }
+.Main.Main--smartphone {
+  overflow: visible;
+}
 
 
 .Column {
@@ -235,7 +238,12 @@
 .Section5__messageNameSmall {
   font-size: 46px;
   letter-spacing: -5px;
+}
 
+.Section5__messageText1 {
+  bottom: 40%;
+  font-size: 94px;
+  font-family: 'yuzupop';
 }
 .Section5__messageKekkon {
   letter-spacing: 8px;
@@ -246,19 +254,51 @@
 .Section5__messageKekkonSmall {
   font-size: 82px;
 }
-.Section5__messageText1 {
-  bottom: 40%;
-  font-size: 94px;
-  font-family: 'yuzupop';
-}
+
 .Section5__messageText2 {
   bottom: 15%;
   font-size: 70px;
   font-family: 'yuzupop';
   letter-spacing: -4px;
 }
+.Section5__messageText2 br {
+  display: none;
+}
 .Section5__messageExclamation {
   letter-spacing: -18px;
+}
+
+.Main--smartphone .Section5__message > span {
+  padding: 16px 16px 14px;
+}
+.Main--smartphone .Section5__messageName {
+  font-size: 38px;
+}
+.Main--smartphone .Section5__messageNameSmall {
+  font-size: 30px;
+  letter-spacing: -7px;
+}
+
+.Main--smartphone .Section5__messageText1 {
+  font-size: 72px;
+}
+.Main--smartphone .Section5__messageKekkonSmall {
+  font-size: 62px;
+}
+
+.Main--smartphone .Section5__messageText2 {
+  bottom: 10%;
+  font-size: 50px;
+  line-height: 1.2;
+}
+.Main--smartphone .Section5__messageText2 > span {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 0;
+  background-color: rgba(255,255,255,.25);
+}
+.Main--smartphone .Section5__messageText2 br {
+  display: block;
 }
 
 .Background {

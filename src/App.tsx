@@ -82,8 +82,12 @@ const App: React.FC = () => {
     "Section5--show": section5,
   });
 
+  const mainClass = ClassNames("Main", {
+    "Main--smartphone": isSmp,
+  });
+
   return (
-    <div className="Main">
+    <div className={mainClass}>
       {section1 && (
         <div className="Section1">
           <ImageSlider isSmp>
@@ -191,7 +195,9 @@ const App: React.FC = () => {
         </p>
         <p className="Section5__message Section5__messageText2">
           <span>
-            おめでとうございます
+            おめでとう
+            <br />
+            ございます
             <span className="Section5__messageExclamation">！!</span>
           </span>
         </p>
